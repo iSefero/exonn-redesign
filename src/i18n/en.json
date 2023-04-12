@@ -1,0 +1,101 @@
+{
+  "description": {
+    "support": "Support & Contact from Mo - Tho:",
+    "h": "h",
+    "friday": "on Fridays:",
+    "tel": "Tel",
+    "newsletter": "Get informed about the latest products and offers per email",
+    "allPrices": "**All prices incl tax, plus shipping",
+    "footer": "Online shop for emobility such as electric scooters, e-scooters, spare parts, turing & accessories and much more",
+    "mustLogged": "You have to be logged in to write a review.",
+    "noReview": "No review available for this product.",
+    "customers": "Customers who bought this product also bought",
+    "similarProduct": "Take a look at our similar products.",
+    "followingProd": "Customers who viewed this product also viewed the following products."
+  },
+
+  "button": {
+    "login": "Log in",
+    "subscribe": "Subscribe",
+    "moreInfo": "More information",
+    "toCart": "To cart"
+  },
+
+  "placeholders": {
+    "search": "Enter a search item",
+    "email": "E-mail"
+  },
+
+  "menu": {
+    "menu": "Menu",
+    "home": "Home",
+    "models": "Scooter models",
+    "children": "Children`s vehicles",
+    "used": "used & returns",
+    "parts": "Spare parts",
+    "accessories": "Accessories",
+    "packing": "Packing material",
+    "more": "More"
+  },
+
+  "service": {
+    "service": "Service",
+    "contact": "Contact",
+    "return": "Returning",
+    "cart": "Cart",
+    "account": "Account",
+    "wishList": "Wish list",
+    "myGift": "My gift registry",
+    "publicGift": "Public gift registries",
+    "download": "My downloads"
+  },
+
+  "information": {
+    "information": "Information",
+    "battery": "Battery disposal / BattgG",
+    "about": "About Us",
+    "terms": "Terms and conditions",
+    "privacy": "Privacy Policy",
+    "shipping": "Shipping and Charges",
+    "withdrawal": "Right of Withdrawal",
+    "order": "How to order",
+    "credits": "Credits",
+    "newsletter": "Newsletter"
+  },
+
+  "title": {
+    "categories": "Категорії",
+    "product": "Product number:",
+    "review": "Customer reviews",
+    "rating": "Rating",
+    "weight": "Shipping weight:",
+    "ready": "Ready for shipping",
+    "paymentMethod": "Payment methods:",
+    "funding": "Funding:",
+    "description": "Description",
+    "specification": "Description",
+    "manual": "Description",
+    "reviewProduct": "Review product",
+    "similar": "Similar products",
+    "youSeen": "Have you seen?"
+  },
+
+  "homeContent": {
+    "h10first": "The e-scooter H10 is approved for\nE-Scooter H10 is ideal for the way to work, this also in conjunction with public transport.",
+    "h10second": "With its low weight of only 14.8 kg and a max. motor power of 540 watts, you can cover a distance of up to 30 km.",
+    "neon": "Here you can learn more about the OKAI Neon in the eKFV and EU version.",
+    "h20first": "The big brother of the H10 is the H20.\nWith an incredible motor power\nof 1008 watts and its 48 volt 10.4 Ah lithium battery, the e-scooter brings it to a range of 42 km.",
+    "h20second": "Compared to the H10, the management of the motor and the installed battery stand out especially here.",
+    "quad": "The new Mini E-Quad SCOTEX Spike is an electric quad equipped with 4 pneumatic tires, powered by a 250W electric motor. The children's electric quad is suitable for children from 5 years",
+    "wheely": "The SCOTEX Wheely is an e-scooter in e-bike design for children. Due to the height-adjustable saddle, the bike grows with the child. The frame and tire size is suitable for children from 3 years."
+  },
+
+  "item": {
+    "compare": "Compare",
+    "recommend": "Recommend",
+    "listmania": "Add to listmania list",
+    "addWishList": "Add to wish list",
+    "giftRegistry": "Add to gift registry",
+    "question": "Questions about product"
+  }
+}
