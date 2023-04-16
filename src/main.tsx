@@ -8,11 +8,11 @@ import "./i18n/i18n"
 import { BrowserRouter } from 'react-router-dom'
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
-  <React.StrictMode>
+  // <React.StrictMode>
     <ChakraProvider theme={theme} resetCSS={true}>
       <BrowserRouter>
         <App />
       </BrowserRouter>
     </ChakraProvider>
-  </React.StrictMode>,
+  // </React.StrictMode>,
 )

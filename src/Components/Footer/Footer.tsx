@@ -5,13 +5,13 @@ import { CSSProperties, FC } from "react";
 import { Box, Divider, Flex, Icon, Text, useBreakpointValue } from "@chakra-ui/react";
 
 // Common
-import { IMenuItem } from "../Menu/Menu";
 import { tPage } from "../../i18n/translator";
 import { Facebook, Instagram, YouTube } from "../../assets/svg";
 import { breakpointStyles, styles } from "./FooterStyles";
 import { mergeStyles } from "../../styles/helper";
 import { breakpoints } from "../../styles/variables/breakpoints";
 import { useFooterDataArray } from "../../Hooks/footerDataArrays";
+import { IMenuItem } from "../../types/types";
 
 export const Footer: FC = (): JSX.Element => {
   const { serviceArray, infoArray, categoriesArray } = useFooterDataArray();
