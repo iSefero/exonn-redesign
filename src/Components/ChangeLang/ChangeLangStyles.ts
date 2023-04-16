@@ -1,21 +1,45 @@
 export const styles = {
   wrapper: {
-    textAlign: "center",
-    gap: "5px"
+    position: "relative",
+    flexDirection: "column",
   },
 
-  hover: {
-    background: "rgb(149 149 158 / 31%)!important"
+  langMenuWrapper: {
+    flexDirection: "column",
+    position: "relative"
   },
 
-  divider: {
-    height: "22px"
+  langMenu: {
+    position: "absolute",
+    padding: "2px 3px",
+    background: "white",
+    border: "1px solid lightgray",
+    borderRadius: "3px",
+    zIndex: "11",
+    top: "5px",
+    left: "-10px",
+    flexDirection: "column",
+    color: "black"
   },
 
-  button: (color: string) => ({
-    padding: "0px 5px",
+  langMenuItem: {
+    alignItems: "center",
+    gap: "5px",
     cursor: "pointer",
-    fontSize: "15px",
-    background: color,
-  })
-}
+    padding: "3px 5px"
+  },
+
+  langMenuItemHover: {
+    background: "blue.100"
+  },
+
+  button: {
+    gap: "5px",
+    cursor: "pointer",
+    background: "#9ac4edd9",
+    alignItems: "center",
+    padding: "0px 10px",
+    borderRadius: "5px",
+    height: "34px"
+  }
+};

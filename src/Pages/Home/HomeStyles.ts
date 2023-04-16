@@ -53,13 +53,9 @@ export const breakpointStyles = {
       width: "980px",
     },
 
-    mainContentWrapper: {},
-
     mainContentBlock: {
       width: "30%",
     },
-
-    imageBlock: {}
 
   },
   [breakpoints.xl]: {
@@ -67,13 +63,9 @@ export const breakpointStyles = {
       width: "840px",
     },
 
-    mainContentWrapper: {},
-
     mainContentBlock: {
       width: "30%",
     },
-
-    imageBlock: {}
 
   },
   [breakpoints.lg]: {

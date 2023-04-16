@@ -4,72 +4,69 @@ export const styles = {
     width: "100%"
   },
 
-  title: {
-    fontSize: "22px"
+  priceWrapper: {
+    flexDirection: "column"
   },
 
-  underTitle: {
-    fontSize: "12px"
+  vatText: {
+    marginTop: "20px"
   },
 
-  ratingText: {
-    textAlign: "right",
-    fontSize: "12px"
+  vatUnderline: {
+    textDecoration: "underline"
   },
 
-  oldPrice: {
-    paddingTop: "30px",
-    textDecoration: "line-through"
-  },
-  newPrice: {
-    fontSize: "21px",
-    color: "#a94442"
+  divider: {
+    marginTop: "10px",
+    borderColor: "lightgray"
   },
 
-  input: {
-    width: "30%",
-    borderRadius: "5px 0px 0px 5px",
-    fontSize: "18px"
+  shipWrapper: {
+    flexDirection: "column",
+    gap: "6px"
   },
 
-  button: {
-    width: "70%",
-    background: "#afc410",
-    border: "1px solid lightgray",
-    borderRadius: "0px 5px 5px 0px",
-    color: "white"
+  priceBlock: {
+    gap: "5px",
+    alignItems: "center"
   },
 
-  shippingWrapper: {
-    alignItems: "center",
-    gap: "5px"
-  },
-
-  shippingIcon: {
-    borderRadius: "50%",
-    width: "8px",
-    height: "8px",
-    background: "green"
-  },
-
-  fundingWrapper: {
-    margin: "15px 0px",
-    height: "70px",
+  oldPriceWrapper: {
     position: "relative"
   },
 
-  fundingText: {
-    fontSize: "18px",
-    fontFamily: "auto",
-    fontWeight: "600"
+  oldPrice: {
+    fontSize: "20px",
+    fontWeight: "500",
+    color: "#0066cc"
   },
 
-  fundingImage: {
+  redLine: {
     position: "absolute",
-    top: "0px",
-    left: "170px",
-    width: "250px",
-    height: "67px"
+    top: "6px",
+    left: "0",
+    width: "calc(100% - 5px)",
+    height: "60%",
+    zIndex: "10",
+    background: "linear-gradient(to top left,transparent,transparent calc(50% - 1.5px),rgba(220,0,0,.8) 50%,transparent calc(50% + 2px),transparent)"
+  },
+
+  newPrice:(color: boolean) => ({
+    fontSize: "40px",
+    fontWeight: "700",
+    lineHeight: "45px",
+    color: color ? "#de0000cc" : "#0066cc"
+  }),
+
+  endingText: {
+    marginTop: "10px",
+    fontWeight: "500",
+    color: "red"
+  },
+
+  shippingText: {
+    color: "green",
+    fontWeight: "700"
   },
 
   methodsWrapper: {
@@ -78,22 +75,26 @@ export const styles = {
     position: "relative"
   },
 
-  methodsText: {
-    fontSize: "18px",
-    fontFamily: "auto",
-    fontWeight: "600"
+  cartButton: {
+    background: "#ff9900",
+    marginTop: "20px",
+    color: "white",
+    height: "50px"
   },
 
-  imageBlock: {
-    position: "absolute",
-    top: "0px",
-    left: "170px",
-    flexDirection: "column",
-    gap: "5px"
+  cartButtonHover: {
+    transform: "scale(1.02)"
   },
-  methodsImage: {
-    height: "35px",
-    width: "130px"
+
+  buttonWrapper: {
+    gap: "15px",
+    marginTop: "20px",
+    flexDirection: "column"
+  },
+
+  button: {
+    gap: "10px",
+    background: "#ededed"
   }
 
 }

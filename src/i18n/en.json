@@ -4,7 +4,6 @@
     "h": "h",
     "friday": "on Fridays:",
     "tel": "Tel",
-    "newsletter": "Get informed about the latest products and offers per email",
     "allPrices": "**All prices incl tax, plus shipping",
     "footer": "Online shop for emobility such as electric scooters, e-scooters, spare parts, turing & accessories and much more",
     "mustLogged": "You have to be logged in to write a review.",
@@ -18,12 +17,29 @@
     "login": "Log in",
     "subscribe": "Subscribe",
     "moreInfo": "More information",
-    "toCart": "To cart"
+    "toCart": "To cart",
+    "bonusPoints": "Bonus points",
+    "check": "Check the issue status",
+    "addFavorite": "to the wishlist",
+    "compare": "Compare products",
+    "cart": "To cart",
+    "firstTask": "First task",
+    "secondTask": "Second task"
   },
 
   "placeholders": {
     "search": "Enter a search item",
     "email": "E-mail"
+  },
+
+  "info": {
+    "oldPrice": "Old price",
+    "readyToShip": "Ready to ship",
+    "comingSoon": "Coming soon",
+    "vat": "with VAT ",
+    "vat2": "plus shipping costs",
+    "only": "There's only",
+    "pcs": "pcs"
   },
 
   "menu": {
@@ -60,7 +76,7 @@
     "withdrawal": "Right of Withdrawal",
     "order": "How to order",
     "credits": "Credits",
-    "newsletter": "Newsletter"
+    "media": "Our social media"
   },
 
   "title": {
@@ -73,11 +89,12 @@
     "paymentMethod": "Payment methods:",
     "funding": "Funding:",
     "description": "Description",
-    "specification": "Description",
+    "specification": "Specification",
     "manual": "Description",
     "reviewProduct": "Review product",
     "similar": "Similar products",
-    "youSeen": "Have you seen?"
+    "youSeen": "Have you seen?",
+    "about": "All about the products"
   },
 
   "homeContent": {
@@ -97,5 +114,9 @@
     "addWishList": "Add to wish list",
     "giftRegistry": "Add to gift registry",
     "question": "Questions about product"
+  },
+
+  "link": {
+    "moreInfo": "Больше информации о товаре"
   }
 }

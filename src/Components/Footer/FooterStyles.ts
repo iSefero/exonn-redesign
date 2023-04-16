@@ -2,9 +2,10 @@ import {breakpoints} from "../../styles/variables/breakpoints";
 
 export const styles = {
   wrapper: {
-    background: "#1d1d1b",
+    background: "#fff",
     flexDirection: "column",
-    gap: "30px"
+    gap: "30px",
+    paddingBottom: "50px"
   },
 
   contentWrapper: {
@@ -13,85 +14,33 @@ export const styles = {
     padding: "30px 10px 0px 10px"
   },
 
-  upperContainer: {
-    gap: "30px",
+  menuWrapper: {
+    gap: "50px",
     justifyContent: "space-between",
   },
 
-  menu: {
-    width: "66%",
+  media: {
+    maxWidth: "400px",
+    flexDirection: "column",
+    gap: "10px",
+    height: "100%",
     justifyContent: "space-between"
   },
 
-  inputBlock: {
-    maxWidth: "400px",
-    flexDirection: "column",
-    gap: "10px"
-  },
-
-  newsletterTitle: {
-    fontSize: "18px",
-    color: "#e3e3e3"
-  },
-
-  newsletterDescription: {
-    fontSize: "12px",
-    color: "#e3e3e3"
-  },
-
-  inputWrapper: {
-    gap: "5px"
-  },
-
-  input: {
-    padding: "6px 12px",
-    borderRadius: "5px",
-    border: "none",
-    background: "white",
-    color: "black",
-    fontSize: "14px",
-    width: "66%",
-    height: "32px"
-  },
-
-  button: {
-    background: "#afc410",
-    width: "30%",
-    height: "32px",
-    padding: "5px",
-    fontSize: "14px",
-    color: "white"
-  },
-
-  middleContainer: {
-    justifyContent: "center",
-    flexDirection: "column",
-    gap: "30px",
-    position: "relative"
+  mediaTitle: {
+    fontSize: "22px",
+    fontFamily: "arial",
+    color: "#0066cc",
+    fontWeight: "600"
   },
 
   iconWrapper: {
-    justifyContent: "center",
     gap: "30px"
-  },
-
-  description: {
-    fontSize: "14px",
-    color: "#e3e3e3",
-    position: "absolute",
-    right: "5px",
-    bottom: "5px"
-  },
-
-  lowerBlock: {
-    justifyContent: "center"
   },
 
   lowerText: {
     fontSize: "14px",
-    color: "#e3e3e3",
-    padding: "0px 10px 30px 10px",
-    width: "1140px"
+    textDecoration: "underline"
   },
 
   menuColumn: {
@@ -99,14 +48,15 @@ export const styles = {
   },
 
   menuTitle: {
-    fontSize: "18px",
-    color: "#e3e3e3",
-    paddingBottom: "10px"
+    fontSize: "22px",
+    fontFamily: "arial",
+    paddingBottom: "10px",
+    color: "#0066cc",
+    fontWeight: "600"
   },
 
   menuItem: {
     fontSize: "14px",
-    color: "#e3e3e3",
     cursor: "pointer"
   },
 
@@ -120,49 +70,39 @@ export const styles = {
     cursor: "pointer"
   },
 
-  iconText: {
-    fontSize: "16px",
-    color: "#e3e3e3"
-  }
 };
 
 export const breakpointStyles = {
   [breakpoints["2xl"]]: {
-    upperContainer: {
+    menuWrapper: {
       width: "1140px"
     },
 
     menu: {
       width: "66%",
-      justifyContent: "space-between"
-    },
-
-    inputBlock: {
-      width: "28%",
-      flexDirection: "column",
+      justifyContent: "space-between",
       gap: "10px"
     },
 
+    media: {}
+
   },
   [breakpoints.xl]: {
-    upperContainer: {
+    menuWrapper: {
       width: "970px"
     },
 
     menu: {
       width: "66%",
-      justifyContent: "space-between"
-    },
-
-    inputBlock: {
-      width: "28%",
-      flexDirection: "column",
+      justifyContent: "space-between",
       gap: "10px"
     },
 
+    media: {}
+
   },
   [breakpoints.lg]: {
-    upperContainer: {
+    menuWrapper: {
       width: "750px",
       flexDirection: "column"
     },
@@ -172,15 +112,11 @@ export const breakpointStyles = {
       justifyContent: "space-between"
     },
 
-    inputBlock: {
-      width: "100%",
-      flexDirection: "column",
-      gap: "10px"
-    },
+    media: {}
 
   },
   [breakpoints.md]: {
-    upperContainer: {
+    menuWrapper: {
       width: "750px",
       flexDirection: "column",
       alignItems: "center"
@@ -194,15 +130,13 @@ export const breakpointStyles = {
       gap: "30px"
     },
 
-    inputBlock: {
-      width: "100%",
-      flexDirection: "column",
-      gap: "10px"
-    },
+    media: {
+      textAlign: "center"
+    }
 
   },
   [breakpoints.sm]: {
-    upperContainer: {
+    menuWrapper: {
       width: "100%",
       flexDirection: "column",
       alignItems: "center"
@@ -217,11 +151,9 @@ export const breakpointStyles = {
       textAlign: "center",
     },
 
-    inputBlock: {
-      width: "100%",
-      flexDirection: "column",
-      gap: "10px"
-    },
+    media: {
+      textAlign: "center"
+    }
 
   }
 }

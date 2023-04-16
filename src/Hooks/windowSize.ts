@@ -1,11 +1,10 @@
+// React
 import { MouseEventHandler, useEffect, useState } from "react";
 
-interface WindowSize {
-  showUpButton: boolean;
-  handleUpClick: MouseEventHandler<HTMLDivElement> | undefined;
-}
+// Common
+import { IWindowSize } from "../types/types";
 
-export const useWindowSize = (): WindowSize => {
+export const useWindowSize = (): IWindowSize => {
   const [showUpButton, setShowUpButton] = useState<boolean>(false);
 
   useEffect(() => {

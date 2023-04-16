@@ -1,8 +1,13 @@
-import { AspectRatio, Flex, Text} from "@chakra-ui/react";
-import { styles } from "./TabMenuDescriptionStyles";
-import { CSSProperties } from "react";
+// React
+import { CSSProperties, FC } from "react";
 
-export const TabMenuDescription = () => {
+// Chakra
+import { AspectRatio, Flex, Text } from "@chakra-ui/react";
+
+// Common
+import { styles } from "./ItemDescriptionStyles";
+
+export const ItemDescription: FC = (): JSX.Element => {
   return (
     <Flex style={styles.wrapper as CSSProperties}>
       <Flex style={styles.videoWrapper as CSSProperties}>

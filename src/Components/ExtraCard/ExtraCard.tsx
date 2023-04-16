@@ -1,36 +1,33 @@
+// React
 import { CSSProperties, FC } from "react";
 
-import { Divider, Image, Text, Flex, Button } from "@chakra-ui/react";
+// Chakra
+import { Image, Text, Flex } from "@chakra-ui/react";
 
-import { CartIcon } from "../../assets/svg";
+// Common
 import { tPage } from "../../i18n/translator";
 import { styles } from "./ExtraCardStyle";
+import { CustomRating } from "../CustomRating/Rating";
+import { IExtraCard } from "../../types/types";
 
-interface IProps {
-  src: string,
-  title: string,
-  priceOld: string,
-  priceNew: string,
-  weight: string
-}
+export const ExtraCard: FC<IExtraCard> = ({src,title,priceOld,price, rating,available}): JSX.Element => {
+  const beforeDot = (str: string) => str.split(".")[0]
+  const afterDot = (str: string) => str.split(".")[1]
 
-export const ExtraCard: FC<IProps> = ({src,title,priceOld,priceNew,weight}) => {
   return (
     <Flex style={styles.wrapper as CSSProperties}>
-      <Image alt="error" src={src}/>
-      <Divider/>
-      <Text>{title}</Text>
-      <Flex style={styles.priceBlock}>
-        <Text style={{textDecoration: "line-through"}}>{priceOld} €</Text>
-        <Text>{priceNew} € *</Text>
-        <Text>Weight {weight} kg</Text>
-      </Flex>
-      <Flex >
-        <Button style={styles.buttonCart}>
-          <CartIcon color="#afc410"/>
-        </Button>
-        <Button style={styles.buttonShow}>{tPage("button.moreInfo")}</Button>
-      </Flex>
+      <Image style={styles.image as CSSProperties} alt="error" src={src}/>
+      <CustomRating value={rating}/>
+      <Text style={styles.title}>{title}</Text>
+      {priceOld && <Flex style={styles.priceBlock as CSSProperties}>
+        <Text>{tPage("info.oldPrice")}:</Text>
+        <Flex style={styles.oldPriceWrapper as CSSProperties}>
+          <Text style={styles.oldPrice}>{beforeDot(priceOld)}.<sup>{afterDot(priceOld)}</sup> €</Text>
+          <Flex style={styles.redLine as CSSProperties}></Flex>
+        </Flex>
+      </Flex>}
+      <Text style={styles.price(priceOld)}>{beforeDot(price)}.<sup>{afterDot(price)}</sup> €</Text>
+      <Text style={styles.available as CSSProperties}>{available ? tPage("info.readyToShip") : tPage("info.comingSoon")}</Text>
     </Flex>
   )
 }

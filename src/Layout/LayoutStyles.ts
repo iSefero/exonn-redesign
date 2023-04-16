@@ -1,7 +1,25 @@
 export const styles = {
   wrapper: {
+    minHeight: "100vh",
+    display: "flex",
+    flexDirection: "column"
+  },
+
+  taskButton: {
+    width: "50%",
+    background: "black",
+    color: "white",
+    borderRadius: "0px",
+    border: "1px solid white"
+  },
+
+  divider: {
+    marginTop: "30px"
+  },
+
+  wrapperContent: {
     position: "fixed",
-    background: "#afc410",
+    background: "#68a8e8",
     padding: "10px",
     borderRadius: "50%",
     bottom: "30px",
@@ -10,6 +28,7 @@ export const styles = {
   },
 
   children: {
-    justifyContent: "center"
+    justifyContent: "center",
+    flex: "1 1 auto"
   }
-}
+};

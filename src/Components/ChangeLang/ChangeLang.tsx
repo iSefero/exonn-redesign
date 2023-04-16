@@ -1,35 +1,82 @@
-import { CSSProperties, FC } from "react";
+// React
+import { CSSProperties, FC, useEffect, useState } from "react";
 
-import { Divider, Flex, Text } from "@chakra-ui/react";
+// Chakra
+import { Flex, Box, Icon, Text } from "@chakra-ui/react";
 
+// i18n
 import { useTranslation } from "react-i18next";
 
+// Common
 import { styles } from "./ChangeLangStyles";
+import { ENFlag, UKFlag } from "../../assets/svg";
 
-export const ChangeLang: FC = () => {
+const languages = [
+  {
+    label: "Українська",
+    lang: "uk",
+    icon: UKFlag
+  },
+  {
+    label: "English",
+    lang: "en",
+    icon: ENFlag
+  }
+]
+
+type LangState = {
+  langName: string
+  visibility?: boolean
+  icon: FC
+};
+
+type changeLang = (lang: string, label: string, icon: FC) => void;
+
+export const ChangeLang: FC = (): JSX.Element => {
+  const [ langData, setLangData ] = useState<LangState>({langName: "Українська", visibility: false, icon: UKFlag});
   const { i18n } = useTranslation();
 
-  const changeLanguage = ( lang: string ): void => {
-    i18n.changeLanguage(lang)
+  const changeLanguage: changeLang = (lang, label, icon) => {
+    i18n.changeLanguage(lang);
+    setLangData({langName: label, icon: icon })
   };
 
-  const selectedLang = ( item: string ): string => i18n.language === item ? "#95959e" : "inherit";
+  useEffect(() => {
+    i18n.changeLanguage("uk");
+  }, []);
+
+
+  const selectedInput = languages.map((item, index) =>
+    <Flex
+      onClick={() => changeLanguage(item.lang, item.label, item.icon)}
+      _hover={styles.langMenuItemHover}
+      style={styles.langMenuItem}
+      key={index}>
+      <Icon as={item.icon}/>
+      <Text >{item.label}</Text>
+    </Flex>
+  )
+
+  const toggleVisibility = (): void => {
+    setLangData((prevState) => ({
+      ...prevState,
+      visibility: !prevState.visibility
+    }));
+  }
 
   return (
     <Flex style={styles.wrapper as CSSProperties}>
-      <Text
-        onClick={() => changeLanguage("uk")}
-        _hover={styles.hover}
-        style={styles.button(selectedLang("uk"))}>
-        UA
-      </Text>
-      <Divider style={styles.divider} orientation="vertical"/>
-      <Text
-        _hover={styles.hover}
-        onClick={() => changeLanguage("en")}
-        style={styles.button(selectedLang("en"))}>
-        EN
-      </Text>
+      <Flex onClick={toggleVisibility} style={styles.button}>
+        <Icon as={langData.icon}/>
+        <Text >{langData.langName}</Text>
+      </Flex>
+      <Flex style={styles.langMenuWrapper as CSSProperties}>
+        {langData.visibility &&
+          <Box style={styles.langMenu as CSSProperties}>
+            {selectedInput}
+          </Box>
+        }
+      </Flex>
     </Flex>
-  )
-}
+  );
+};

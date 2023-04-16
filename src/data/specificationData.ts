@@ -59,4 +59,44 @@ export const specification = [
     label: "Battery capacity in Wh",
     data: "270"
   },
+  {
+    label: "Battery type",
+    data: "Lithium"
+  },
+  {
+    label: "Battery removable for charging",
+    data: "no"
+  },
+  {
+    label: "Cell type",
+    data: "18650"
+  },
+  {
+    label: "Charger",
+    data: "42V 2A"
+  },
+  {
+    label: "Max. Charging time (in hours)",
+    data: "3,5"
+  },
+  {
+    label: "Cruise control",
+    data: "no (not allowed)"
+  },
+  {
+    label: "Operation",
+    data: "thumb throttle"
+  },
+  {
+    label: "Brake system",
+    data: "front drum, rear electric"
+  },
+  {
+    label: "Tires",
+    data: "8,5 x 2"
+  },
+  {
+    label: "Tire size (in Inch)",
+    data: "8,5"
+  },
 ]

@@ -1,5 +1,10 @@
+// React
+import { FC } from "react";
+
+// Chakra
 import { Divider, Flex, Text, Image, Button, AspectRatio, useBreakpointValue } from "@chakra-ui/react";
 
+// Image
 import right from "../../assets/images/scooterRight.png"
 import h10 from "../../assets/images/h10Scooter.png"
 import top from "../../assets/images/scooterTop.png"
@@ -13,17 +18,15 @@ import quadLogo from "../../assets/images/quadroLogo.png"
 import wheely from "../../assets/images/wheely.jpg"
 import wheelyLogo from "../../assets/images/wheelyLogo.png"
 
+// Common
 import { tPage } from "../../i18n/translator";
-import { ReactNode} from "react";
 import { breakpointStyles, styles } from "./HomeStyles";
 import { mergeStyles } from "../../styles/helper";
 import { breakpoints } from "../../styles/variables/breakpoints";
+import { ILayout } from "../../types/types";
 
-type WrapperProps = {
-  children: ReactNode
-}
 
-export const Home = () => {
+export const Home: FC = (): JSX.Element => {
   const breakpoint = (useBreakpointValue(breakpoints) as string) || breakpoints.lg;
 
   const mainImage = (src: string) => <Image style={styles.image} alt="error" src={src}/>;
@@ -37,13 +40,13 @@ export const Home = () => {
     </Flex>;
 
 
-  const Wrapper = ({children}: WrapperProps) =>
+  const Wrapper = ({children}: ILayout) =>
     <>
       <Divider style={styles.divider}/>
       <Flex style={mergeStyles(styles.mainContentWrapper, breakpointStyles[breakpoint].mainContentWrapper)}>
         {children}
       </Flex>
-    </>
+    </>;
 
   return (
     <Flex style={mergeStyles(styles.wrapper, breakpointStyles[breakpoint].wrapper)}>

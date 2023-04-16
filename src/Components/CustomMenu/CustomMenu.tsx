@@ -1,5 +1,7 @@
+// React
 import { CSSProperties, FC, useEffect, useState } from "react";
 
+// Chakra
 import { HamburgerIcon } from "@chakra-ui/icons"
 import {
   Flex,
@@ -10,15 +12,17 @@ import {
   useBreakpointValue, useDisclosure, Collapse
 } from "@chakra-ui/react"
 
+// Common
 import { tPage } from "../../i18n/translator";
 import { breakpoints } from "../../styles/variables/breakpoints";
 import { Menu } from "../Menu/Menu";
-import { useMenuArrays } from "../../Hooks/menuArrays";
+import { useMenuDataArrays } from "../../Hooks/menuDataArrays";
 import { styles } from "./CustomMenuStyles";
+import {IMenuExtraItem } from "../../types/types";
 
 
 export const CustomMenu: FC = (): JSX.Element => {
-  const [ menuItems2XL, menuItemsLG, menuItemsXL ] = useMenuArrays();
+  const { menuItems2XL, menuItemsLG, menuItemsXL } = useMenuDataArrays();
   const breakpoint = (useBreakpointValue(breakpoints) as string) || breakpoints.lg;
   const smallScreen = breakpoint === breakpoints.sm || breakpoint === breakpoints.md;
   const [showMenu, setShowMenu] = useState<boolean>(false);
@@ -29,7 +33,8 @@ export const CustomMenu: FC = (): JSX.Element => {
     else setShowMenu(false)
   }, [smallScreen])
 
-  const showArray = () => {
+  // Return data under different devices
+  const dataForDiffScreens = (): IMenuExtraItem[]  => {
     if (breakpoint === breakpoints["2xl"]) {
       return menuItems2XL
     } else if (breakpoint === breakpoints.xl) {
@@ -54,13 +59,13 @@ export const CustomMenu: FC = (): JSX.Element => {
 
 
   return (
-    <Flex style={styles.wrapper(smallScreen) as CSSProperties}>
+    <Flex style={styles.wrapperContent(smallScreen) as CSSProperties}>
       {smallScreen && menuButton}
       {smallScreen
         ? (<Collapse in={isOpen} animateOpacity>
-           <Menu buttonItem={showArray()}/>
+           <Menu buttonItem={dataForDiffScreens()}/>
           </Collapse>)
-        : showMenu && <Menu buttonItem={showArray()}/>}
+        : showMenu && <Menu buttonItem={dataForDiffScreens()}/>}
     </Flex>
   )
 };

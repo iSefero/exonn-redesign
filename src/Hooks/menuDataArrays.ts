@@ -1,6 +1,6 @@
 import { tPage } from "../i18n/translator";
 
-export const useMenuArrays = () => {
+export const useMenuDataArrays = () => {
 
   const menuItems2XL = [
     {label: tPage("menu.home")},
@@ -34,13 +34,14 @@ export const useMenuArrays = () => {
         {label: "Scotex Wheely"},
       ]
     },
-    {label: tPage("menu.accessories")},
     {
       label: tPage("menu.more"),
       menuItem: [
         {label: tPage("menu.packing")},
       ]
     },
+    {label: tPage("menu.accessories")},
+
   ]
 
   const menuItemsLG = [
@@ -67,5 +68,5 @@ export const useMenuArrays = () => {
   ]
 
 
-  return [menuItems2XL, menuItemsLG, menuItemsXL]
+  return { menuItems2XL, menuItemsLG, menuItemsXL }
 };

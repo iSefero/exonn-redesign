@@ -1,12 +1,15 @@
-import { CSSProperties, useState } from 'react';
+// React
+import { CSSProperties, FC, useState } from 'react';
 
-import { Flex, Image, IconButton } from '@chakra-ui/react';
-import { ChevronLeftIcon, ChevronRightIcon } from '@chakra-ui/icons';
+// Chakra
+import { Flex, Image, Icon, Button } from '@chakra-ui/react';
+import { ArrowLeftIcon, ArrowRightIcon } from '@chakra-ui/icons';
 
+// Common
 import { carouselItems } from "../../data/carouselArray";
-import {styles} from "./CarouselStyles";
+import { styles } from "./ImageCarouselStyles";
 
-export const Carousel = (): JSX.Element => {
+export const ImageCarousel: FC = (): JSX.Element => {
   const [activeIndex, setActiveIndex] = useState<number>(0);
   const [start, setStart] = useState<number>(0);
 
@@ -28,18 +31,16 @@ export const Carousel = (): JSX.Element => {
 
   return (
     <Flex style={styles.wrapper as CSSProperties}>
-      <Image src={carouselItems[activeIndex].original} objectFit="cover" />
+      <Image src={carouselItems[activeIndex].original} style={styles.mainImage as CSSProperties}/>
       <Flex mt={4} alignItems="center">
-        <Flex onClick={handlePrev} _hover={styles.IconHover} style={styles.leftSideIcon}>
-          <IconButton
-            style={styles.arrowIcon}
-            aria-label="Previous Image"
-            icon={<ChevronLeftIcon />}
-            disabled={start === 0}
+        <Button onClick={handlePrev} style={styles.button} >
+          <Icon
+            color={start === 0 ? "gray.300" : "black"}
+            as={ArrowLeftIcon}
           />
-        </Flex>
+        </Button>
         <Flex style={styles.carouselWrapper as CSSProperties} >
-          {carouselItems.slice(start, start + 5).map((image, index) => (
+          {carouselItems.slice(start, start + 4).map((image, index) => (
             <Flex
               key={index}
               onClick={() => handleClick(start + index)}
@@ -47,23 +48,21 @@ export const Carousel = (): JSX.Element => {
             >
               <Flex style={styles.carouselItem}>
                 <Image
+                  boxSize="50px"
                   src={image.thumbnail}
-                  boxSize="100%"
-                  objectFit="contain"
+                  style={styles.thumbnailImage as CSSProperties}
                   borderWidth={index === activeIndex - start ? 2 : 0}
                 />
               </Flex>
             </Flex>
           ))}
         </Flex>
-        <Flex onClick={handleNext} _hover={styles.IconHover} style={styles.rightSideIcon} >
-          <IconButton
-            style={styles.arrowIcon}
-            aria-label="Next Image"
-            icon={<ChevronRightIcon />}
-            disabled={start + 5 >= carouselItems.length}
-          />
-        </Flex>
+          <Button onClick={handleNext} style={styles.button}>
+            <Icon
+              color={start + 5 >= carouselItems.length ? "gray.300" : "black"}
+              as={ArrowRightIcon}
+            />
+          </Button>
       </Flex>
     </Flex>
   );

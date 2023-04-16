@@ -1,10 +1,15 @@
+// React
+import {FC} from "react";
+
+// Chakra
 import { Box, Text, Flex, useBreakpointValue } from "@chakra-ui/react"
 
+// Common
 import { specification } from "../../data/specificationData";
-import { breakpointStyles, styles } from "./TabMenySpecificationStyles";
+import { breakpointStyles, styles } from "./ItemSpecificationStyles";
 import { breakpoints } from "../../styles/variables/breakpoints";
 
-export const TabMenuSpecification = () => {
+export const ItemSpecification: FC = (): JSX.Element => {
   const breakpoint = (useBreakpointValue(breakpoints) as string) || breakpoints.lg;
 
   const renderContent = specification.map((item, index) => {
@@ -18,9 +23,8 @@ export const TabMenuSpecification = () => {
   });
 
   return(
-    <Box>
+    <Box >
       {renderContent}
-      <Text style={styles.text}>Далі заповнення таблиці у ручну не має сенсу</Text>
     </Box>
   )
 }

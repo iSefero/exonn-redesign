@@ -1,23 +1,36 @@
 import { breakpoints } from "../../styles/variables/breakpoints";
-import { IMenuItem } from "./Menu";
+
+type Props = {
+  label: string
+}
 
 export const styles = {
   wrapper: {
+    gap: "5px",
+  },
+
+  wrapperContent: {
     position: "relative",
   },
 
   hoverMainMenu: {
-    color: "#1d1d1b !important"
+    transform: "scale(1.01)"
   },
 
-  maiMenu:(stateName: string, itemName: string) => ({
+  maiMenu: {
     alignItems: "center",
-    padding: "10px 15px",
+    padding: "5px 10px",
+    background: "#68a8e8",
+    borderRadius: "5px",
     gap: "4px",
     cursor: "pointer",
-    color: stateName === itemName ? "#1d1d1b" : "#afc410",
+    color:  "#fff",
     position: "relative"
-  }),
+  },
+
+  mainMenuText: {
+    whiteSpace: "nowrap"
+  },
 
   contextMenu: {
     padding: "4px 0px",
@@ -25,8 +38,8 @@ export const styles = {
     zIndex: "1"
   },
 
-  itemContextMenu: (item: IMenuItem[] | undefined) => ({
-    background: item ? "gray" : "#afc410",
+  itemContextMenu: (item?: Props[]) => ({
+    background: item ? "gray" : "#68a8e8",
     color: "white"
   }),
 
@@ -47,7 +60,7 @@ export const styles = {
   },
 
   hoverDoubleContextItem: {
-    background: "#afc410",
+    background: "#68a8e8",
     color: "white !important"
   },
 
@@ -61,41 +74,59 @@ export const styles = {
 
 export const breakpointStyles = {
   [breakpoints["2xl"]]: {
+    wrapper: {
+
+    },
+
     contextMenu: {
       position: "absolute",
       width: "170px",
       border: "1px solid gray",
       boxShadow: "1px 1px 4px 1px gray",
-      top: "42px",
-      left: "0px",
+      top: "35px",
+      left: "-20px",
     }
   },
   [breakpoints.xl]: {
+    wrapper: {
+    },
+
     contextMenu: {
       position: "absolute",
       width: "170px",
       border: "1px solid gray",
       boxShadow: "1px 1px 4px 1px gray",
-      top: "42px",
-      left: "0px",
+      top: "35px",
+      left: "-20px",
     }
   },
   [breakpoints.lg]: {
+    wrapper: {
+    },
+
     contextMenu: {
       position: "absolute",
       width: "170px",
       border: "1px solid gray",
       boxShadow: "1px 1px 4px 1px gray",
-      top: "42px",
-      left: "0px",
+      top: "35px",
+      left: "-20px",
     }
   },
   [breakpoints.md]: {
+    wrapper: {
+      flexDirection: "column"
+    },
+
     contextMenu: {
       width: "100%",
     }
   },
   [breakpoints.sm]: {
+    wrapper: {
+      flexDirection: "column"
+    },
+
     contextMenu: {
       width: "100%",
     }

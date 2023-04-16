@@ -1,12 +1,10 @@
 export const styles = {
-  wrapper: (smallScreen: boolean) => ({
+  wrapperContent: (smallScreen: boolean) => ({
     justifyContent: "center",
     zIndex: "10",
     background: "#FFFFFFD3",
     width: "100%",
     flexDirection: smallScreen ? "column" : "row",
-    position: "sticky",
-    top: "0"
   }),
 
   menuButtonWrapper: {

@@ -1,8 +1,11 @@
+// React
 import { CSSProperties, FC } from "react";
 
-import { Flex, Image, Box, Input, Button, Text, useBreakpointValue } from "@chakra-ui/react";
+// Chakra
+import { Flex, Image, Input, Button, useBreakpointValue } from "@chakra-ui/react";
 
-import logo from "../../assets/images/logo.svg"
+// Common
+import logo from "../../assets/images/logo.png"
 import { tPage } from "../../i18n/translator";
 import { ChangeLang } from "../ChangeLang/ChangeLang";
 import { CartIcon, SearchIcon } from "../../assets/svg";
@@ -11,31 +14,27 @@ import { breakpoints } from "../../styles/variables/breakpoints";
 import { mergeStyles } from "../../styles/helper";
 
 
-export const Header: FC = () => {
+export const Header: FC = (): JSX.Element => {
   const breakpoint = (useBreakpointValue(breakpoints) as string) || breakpoints.lg;
 
   const logoBlock = <Image style={styles.logo} src={logo}/>;
-  const middleBlock = <Flex style={mergeStyles(styles.infoBlockWrapper, breakpointStyles[breakpoint].infoBlockWrapper)}>
-    <form>
-      <Flex >
+  const middleBlock =
+    <form style={styles.inputWrapper}>
+      <Flex>
         <Input style={styles.input} placeholder={tPage("placeholders.search")}/>
         <Button style={styles.inputButton}>
           <SearchIcon color="white"/>
         </Button>
       </Flex>
-    </form>
-    <Box style={styles.infoBlockText as CSSProperties}>
-      <Text>{tPage("description.support")} 9:00 - 12:00 {tPage("description.h")} & 14:00 - 16:00 {tPage("description.h")}</Text>
-      <Text>{tPage("description.friday")} 9:00-12:00 {tPage("description.h")} - {tPage("description.tel")} +49 7623 - 468 412</Text>
-      <Text>info@scotex.de</Text>
-    </Box>
-  </Flex>;
+    </form>;
 
   const rightSideBlock = <Flex style={styles.rightBlock}>
     <ChangeLang/>
-    <Button style={styles.loginButton}>{tPage("button.login")}</Button>
-    <Flex style={styles.cartButton}>
-      <CartIcon color="#afc410"/>
+    <Flex style={styles.cartLoginBlock}>
+      <Button style={styles.loginButton}>{tPage("button.login")}</Button>
+      <Flex style={styles.cartButton}>
+        <CartIcon color="white"/>
+      </Flex>
     </Flex>
   </Flex>;
 
@@ -70,7 +69,6 @@ export const Header: FC = () => {
       );
     }
   };
-
 
   return (
     <Flex style={styles.wrapper}>

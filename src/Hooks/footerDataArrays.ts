@@ -1,6 +1,6 @@
 import { tPage } from "../i18n/translator";
 
-export const useFooterArray = () => {
+export const useFooterDataArray = () => {
 
   const serviceArray = [
     {label: tPage("service.contact")},
@@ -22,7 +22,6 @@ export const useFooterArray = () => {
     {label: tPage("information.withdrawal")},
     {label: tPage("information.order")},
     {label: tPage("information.credits")},
-    {label: tPage("information.newsletter")},
   ];
 
   const categoriesArray = [
@@ -35,5 +34,5 @@ export const useFooterArray = () => {
   ];
 
 
-  return [serviceArray, infoArray, categoriesArray]
+  return { serviceArray, infoArray, categoriesArray }
 }

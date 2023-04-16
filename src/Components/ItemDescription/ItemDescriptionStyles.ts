@@ -10,7 +10,7 @@ export const styles = {
     gap: "70px",
     flexDirection: "column",
     width: "100%",
-    maxWidth: "560px"
+    maxWidth: "660px"
   },
 
   textWrapper: {
@@ -18,5 +18,4 @@ export const styles = {
     flexDirection: "column",
     gap: "20px"
   }
-
-}
+};
