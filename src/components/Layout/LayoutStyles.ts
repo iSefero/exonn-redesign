@@ -29,6 +29,7 @@ export const styles = {
 
   children: {
     justifyContent: "center",
-    flex: "1 1 auto"
+    flex: "1 1 auto",
+    padding: "0px 10px"
   }
 };

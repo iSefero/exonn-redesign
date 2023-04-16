@@ -1,8 +1,8 @@
 import { tPage } from "../i18n/translator";
 
-export const useFooterDataArray = () => {
+export const useFooterDataList = () => {
 
-  const serviceArray = [
+  const serviceList = [
     {label: tPage("service.contact")},
     {label: tPage("service.return")},
     {label: tPage("service.cart")},
@@ -13,7 +13,7 @@ export const useFooterDataArray = () => {
     {label: tPage("service.download")},
   ];
 
-  const infoArray = [
+  const infoList = [
     {label: tPage("information.battery")},
     {label: tPage("information.about")},
     {label: tPage("information.terms")},
@@ -24,7 +24,7 @@ export const useFooterDataArray = () => {
     {label: tPage("information.credits")},
   ];
 
-  const categoriesArray = [
+  const categoriesList = [
     {label: tPage("menu.models")},
     {label: tPage("menu.children")},
     {label: tPage("menu.used")},
@@ -34,5 +34,5 @@ export const useFooterDataArray = () => {
   ];
 
 
-  return { serviceArray, infoArray, categoriesArray }
+  return { serviceList, infoList, categoriesList }
 }

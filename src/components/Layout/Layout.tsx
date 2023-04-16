@@ -7,20 +7,20 @@ import { Link } from "react-router-dom";
 import { Box, Button, Divider, Flex, Icon } from "@chakra-ui/react";
 
 // Common
-import { Header } from "../Components/Header/Header";
-import { CustomMenu } from "../Components/CustomMenu/CustomMenu";
-import { Footer } from "../Components/Footer/Footer";
-import { ArrowUp } from "../assets/svg";
-import { useWindowSize } from "../Hooks/windowSize";
+import { Header } from "../Header/Header";
+import { CustomMenu } from "../CustomMenu/CustomMenu";
+import { Footer } from "../Footer/Footer";
+import { ArrowUp } from "../../assets/svg";
+import { useWindowSize } from "../../hooks/windowSize";
 import { styles } from "./LayoutStyles";
-import { tPage } from "../i18n/translator";
-import { ILayout } from "../types/types";
+import { tPage } from "../../i18n/translator";
+import { ILayout } from "../../types/types";
 
 
 export const Layout: FC<ILayout> = ({children}): JSX.Element => {
   const { showUpButton, handleUpClick } = useWindowSize();
 
-  const up =
+  const moveUpButton =
   <Flex onClick={handleUpClick} style={styles.wrapperContent as CSSProperties}>
     <Icon as={ArrowUp}/>
   </Flex>;
@@ -44,7 +44,7 @@ export const Layout: FC<ILayout> = ({children}): JSX.Element => {
       <Box>
         <Footer/>
       </Box>
-      {showUpButton && up}
+      {showUpButton && moveUpButton}
     </div>
   )
 }

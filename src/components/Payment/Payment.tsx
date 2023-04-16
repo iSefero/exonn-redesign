@@ -5,7 +5,7 @@ import { Button, Flex, Text, Divider, Icon } from "@chakra-ui/react"
 import { styles } from "./PaymentStyles";
 import { tPage } from "../../i18n/translator";
 import { CartIcon } from "../../assets/svg";
-import { usePaymentDataArray } from "../../Hooks/paymentDataArray";
+import { usePaymentDataArray } from "../../hooks/paymentDataList";
 
 export const Payment: FC = (): JSX.Element=> {
   const { paymentButton } = usePaymentDataArray()

@@ -17,7 +17,6 @@ export const styles = {
     fontSize: "14px",
     background: "#d3d3d3",
     borderRadius: "40px",
-    width: "125px",
     height: "34px"
   },
 

@@ -16,19 +16,19 @@ import {
 import { tPage } from "../../i18n/translator";
 import { breakpoints } from "../../styles/variables/breakpoints";
 import { Menu } from "../Menu/Menu";
-import { useMenuDataArrays } from "../../Hooks/menuDataArrays";
+import { useMenuDataList } from "../../hooks/menuDataList";
 import { styles } from "./CustomMenuStyles";
-import {IMenuExtraItem } from "../../types/types";
+import { IMenuExtraItem } from "../../types/types";
 
 
 export const CustomMenu: FC = (): JSX.Element => {
-  const { menuItems2XL, menuItemsLG, menuItemsXL } = useMenuDataArrays();
+  const { menuItems2XL, menuItemsLG, menuItemsXL } = useMenuDataList();
   const breakpoint = (useBreakpointValue(breakpoints) as string) || breakpoints.lg;
   const smallScreen = breakpoint === breakpoints.sm || breakpoint === breakpoints.md;
   const [showMenu, setShowMenu] = useState<boolean>(false);
   const { isOpen, onToggle } = useDisclosure();
 
-    useEffect(() => {
+  useEffect(() => {
     if (!smallScreen) setShowMenu(true)
     else setShowMenu(false)
   }, [smallScreen])

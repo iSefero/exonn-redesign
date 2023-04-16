@@ -107,16 +107,7 @@
     "wheely": "The SCOTEX Wheely is an e-scooter in e-bike design for children. Due to the height-adjustable saddle, the bike grows with the child. The frame and tire size is suitable for children from 3 years."
   },
 
-  "item": {
-    "compare": "Compare",
-    "recommend": "Recommend",
-    "listmania": "Add to listmania list",
-    "addWishList": "Add to wish list",
-    "giftRegistry": "Add to gift registry",
-    "question": "Questions about product"
-  },
-
   "link": {
-    "moreInfo": "Больше информации о товаре"
+    "moreInfo": "More information about product"
   }
 }

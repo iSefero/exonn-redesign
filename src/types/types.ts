@@ -1,4 +1,4 @@
-import { MouseEventHandler, ReactNode } from "react";
+import { MouseEventHandler, ReactNode, RefObject} from "react";
 
 type Specification = {
   label: string
@@ -7,6 +7,7 @@ type Specification = {
 
 export interface ISpecification {
   data: Specification[]
+  specificRef: RefObject<HTMLParagraphElement>
 }
 
 export interface IMenuItem {

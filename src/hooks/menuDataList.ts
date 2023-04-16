@@ -1,6 +1,6 @@
 import { tPage } from "../i18n/translator";
 
-export const useMenuDataArrays = () => {
+export const useMenuDataList = () => {
 
   const menuItems2XL = [
     {label: tPage("menu.home")},

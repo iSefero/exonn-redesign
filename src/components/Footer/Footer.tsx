@@ -10,11 +10,11 @@ import { Facebook, Instagram, YouTube } from "../../assets/svg";
 import { breakpointStyles, styles } from "./FooterStyles";
 import { mergeStyles } from "../../styles/helper";
 import { breakpoints } from "../../styles/variables/breakpoints";
-import { useFooterDataArray } from "../../Hooks/footerDataArrays";
+import { useFooterDataList } from "../../hooks/footerDataList";
 import { IMenuItem } from "../../types/types";
 
 export const Footer: FC = (): JSX.Element => {
-  const { serviceArray, infoArray, categoriesArray } = useFooterDataArray();
+  const { serviceList, infoList, categoriesList } = useFooterDataList();
   const breakpoint = (useBreakpointValue(breakpoints) as string) || breakpoints.lg;
 
   const showContent = (title: string, data: IMenuItem[]): JSX.Element =>
@@ -36,9 +36,9 @@ export const Footer: FC = (): JSX.Element => {
       <Flex style={styles.contentWrapper}>
         <Flex style={mergeStyles(styles.menuWrapper, breakpointStyles[breakpoint].menuWrapper)}>
           <Flex style={breakpointStyles[breakpoint].menu as CSSProperties}>
-            {showContent(tPage("service.service"), serviceArray)}
-            {showContent(tPage("information.information"), infoArray)}
-            {showContent(tPage("title.categories"), categoriesArray)}
+            {showContent(tPage("service.service"), serviceList)}
+            {showContent(tPage("information.information"), infoList)}
+            {showContent(tPage("title.categories"), categoriesList)}
           </Flex>
           <Flex style={mergeStyles(styles.media, breakpointStyles[breakpoint].media)}>
             <Flex style={{flexDirection: "column", gap: "10px"}}>

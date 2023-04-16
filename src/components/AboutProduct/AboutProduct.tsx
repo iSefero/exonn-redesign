@@ -10,20 +10,17 @@ import { ISpecification } from "../../types/types";
 import { styles } from "./AboutProdcutStyle";
 import { tPage } from "../../i18n/translator";
 
-export const AboutProduct: FC<ISpecification> = ({data}): JSX.Element => {
-  const renderTechData = <Flex style={styles.contentWrapper as CSSProperties}>
-    {data.slice(0, 8).map((item, index) =>
+export const AboutProduct: FC<ISpecification> = ({data, specificRef}): JSX.Element => {
+  const renderTechData = data.slice(0, 8).map((item, index) =>
       <Flex key={index} style={styles.item}>
         <Flex style={styles.itemDot}></Flex>
         <Text style={styles.itemText}>{item.label}: <span style={styles.itemData}>{item.data}</span></Text>
       </Flex>
-    )}
-  </Flex>;
+    )
 
   const moveToSpecification = () => {
-    const specificationElement = document.getElementById('specification');
-    if (specificationElement) {
-      specificationElement.scrollIntoView({ behavior: 'smooth' });
+    if (specificRef.current) {
+      specificRef.current.scrollIntoView({behavior: 'smooth'})
     }
   };
 
@@ -34,7 +31,9 @@ export const AboutProduct: FC<ISpecification> = ({data}): JSX.Element => {
         <CustomRating value={4.6}/>
         <Flex style={styles.ratingBox}>4.6</Flex>
       </Flex>
-      {renderTechData}
+      <Flex style={styles.contentWrapper as CSSProperties}>
+        {renderTechData}
+      </Flex>
       <Text onClick={moveToSpecification} style={styles.link}>{tPage("link.moreInfo")} {">"}</Text>
     </Box>
   )

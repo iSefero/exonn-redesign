@@ -2,9 +2,9 @@
 import { Route, Routes } from "react-router-dom";
 
 // Common
-import { Layout } from "./Layout/Layout";
-import { Home } from "./Pages/Home/Home";
-import { Item } from "./Pages/Item/Item";
+import { Layout } from "./components/Layout/Layout";
+import { Home } from "./pages/Home/Home";
+import { Item } from "./pages/Item/Item";
 
 function App() {
 

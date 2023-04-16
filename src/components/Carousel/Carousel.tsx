@@ -7,9 +7,9 @@ import { ArrowLeftIcon, ArrowRightIcon } from '@chakra-ui/icons';
 
 // Common
 import { carouselItems } from "../../data/carouselArray";
-import { styles } from "./ImageCarouselStyles";
+import { styles } from "./CarouselStyles";
 
-export const ImageCarousel: FC = (): JSX.Element => {
+export const Carousel: FC = (): JSX.Element => {
   const [activeIndex, setActiveIndex] = useState<number>(0);
   const [start, setStart] = useState<number>(0);
 
